@@ -50,7 +50,7 @@ const AppLayout = ({ children }) => {
         </div>
       </div>
 
-      <div className="bg-slate-400">2</div>
+      <div className="bg-slate-400">{children}</div>
     </div>
   );
 };
