@@ -65,6 +65,16 @@ NewPost.getLayout = (page, pageProps) => {
   return <AppLayout {...pageProps}>{page}</AppLayout>;
 };
 
-export const getServerSideProps = withPageAuthRequired(() => {});
+export const getServerSideProps = withPageAuthRequired({
+  async getServerSideProps(context) {
+    const props = await getAppProps(context);
+
+    return {
+      props: {
+        ...props,
+      },
+    };
+  },
+});
 
 export default NewPost;
